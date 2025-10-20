@@ -42,16 +42,12 @@ def calculator():
         if op.upper() == "C":
             continue
 
-        try:
-            num_1 = float(num_1)
-            num_2 = float(num_2)
-            if op in case:
-                rez = case[op](num_1, num_2)
-                print("Rezultat:", rez, "\n")
-            else:
-                print("Operatie invalida\n")
-        except ValueError:
-            print("Eroare: Introduceti numere valide\n")
-calculator()
+        num_1 = float(num_1)
+        num_2 = float(num_2)
+        if op in case:
+            rez = case[op](num_1, num_2)
+            print("Rezultat:", rez, "\n")
+        else:
+            print("Operatie invalida\n")
 
-            
+calculator()
