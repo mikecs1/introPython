@@ -1,5 +1,4 @@
-def calculator():
-    while True:
+while True:
         num_1 = input("Numarul 1 (sau C / Q): ")
 
         if num_1.upper() == "Q":
@@ -31,5 +30,3 @@ def calculator():
             print("Rezultat:", rez, "\n")
         except:
             print("Eroare\n")
-
-calculator()
