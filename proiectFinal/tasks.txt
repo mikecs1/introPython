@@ -1,0 +1,3 @@
+tema micro,22.10.2025,mihnea,munca
+tema proiect python,27.11.2025,mihnea,cumparaturi
+tema 2,25.10.242,andrei,curs
