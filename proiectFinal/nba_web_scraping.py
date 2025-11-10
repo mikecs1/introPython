@@ -25,7 +25,6 @@ def main():
     url = sys.argv[1].strip() if len(sys.argv) > 1 else DEFAULT_URL
     print("Using URL:", url)
 
-    # Inline extraction of player tag (replaces the removed get_player_tag function)
     m = re.search(r"/players/[a-z]/([^/]+)\.html", url or "")
     player = m.group(1) if m else "player"
 
@@ -40,7 +39,7 @@ def main():
     try:
         tables = pd.read_html(html, flavor="lxml")
     except Exception as e:
-        print("Error parsing tables:", e)
+        print("error parsing tables:", e)
         return
 
     per_game = None
@@ -49,10 +48,6 @@ def main():
         if "Season" in cols and "PTS" in cols:
             per_game = df
             break
-
-    if per_game is None:
-        print("Couldn't find per_game table.")
-        return
 
     out = f"{player}_per_game.csv"
     per_game.to_csv(out, index=False)
